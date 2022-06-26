@@ -1,48 +1,48 @@
 Cabin number 1
- passenger 1 :- { dasun shanaka - 20000.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { danushka gunathilaka - 20000.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 2
- passenger 1 :- { empty - 0.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 3
- passenger 1 :- { empty - 0.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 4
- passenger 1 :- { empty - 0.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { wanidu hasaranga - 20000.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 5
- passenger 1 :- { empty - 0.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 6
- passenger 1 :- { wanidu hasaranga - 45000.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 7
- passenger 1 :- { empty - 0.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 8
- passenger 1 :- { empty - 0.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 9
- passenger 1 :- { empty - 0.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 10
- passenger 1 :- { empty - 0.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 11
- passenger 1 :- { empty - 0.0 }
- passenger 2 :- { empty - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
 Cabin number 12
- passenger 1 :- { kumara sangakkara - 20000.0 }
- passenger 2 :- { yoheli sangakkara - 0.0 }
- passenger 3 :- { empty - 0.0 }
+ passenger 1 :- { empty - 0.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { empty - 0.0 }.
