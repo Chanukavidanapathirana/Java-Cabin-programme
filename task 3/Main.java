@@ -16,7 +16,7 @@ public class Main {
     }
 
     /***
-     * initialising cabin rooms.
+     * Initialising cabin rooms.
      * @param cabinRooms Array of cabins.
      */
     private static void initialise(Cabin cabinRooms[]) {
@@ -29,12 +29,9 @@ public class Main {
         System.out.println("initialised");
     }
 
-    /***
-     * Creating a file to store data
-     */
     public static void crateFile() {
         try {
-            File cabinDetails = new File("CabinDetails.txt");
+            File cabinDetails = new File(Constants.getFilePath());
             if (cabinDetails.createNewFile()) {
                 System.out.println(String.format("File created: %S", cabinDetails.getName()));
             } else {
@@ -54,9 +51,7 @@ public class Main {
         int arrayLength = 0;
         for (int i = 0; i < cabinRooms.length; i++) {
             for (int j = 0; j < Constants.PASSENGERS_IN_A_CABIN; j++) {
-                if ("empty".equals(cabinRooms[i].getGustsInCabin()[j].getFullName()) || "e".equals(cabinRooms[i].getGustsInCabin()[j].getSecondName())) {
-
-                } else {
+                if (!("empty".equals(cabinRooms[i].getGustsInCabin()[j].getFullName()) || "e".equals(cabinRooms[i].getGustsInCabin()[j].getSecondName()))) {
                     arrayLength++;
                 }
             }
@@ -88,20 +83,7 @@ public class Main {
     }
 
     /***
-     * Checking whether cabins full or not.
-     * @param cabinRooms - cabin array.
-     * @return
-     */
-    public static boolean cabinFullOrNot(Cabin[] cabinRooms) {
-        boolean check = false;
-        for (int i = 0; i < 12; i++) {
-            check = check || "empty".equals(cabinRooms[i].getGustsInCabin()[0].getFullName());
-        }
-        return check;
-    }
-
-    /***
-     * programme main menu.
+     * Programme main menu.
      * @param cabinRooms - cabin array.
      * @param passengerQueue - Passenger array for queue.
      */
@@ -130,24 +112,30 @@ public class Main {
             } else {
                 switch (input) {
                     case "A":
-                        Cabin.addPassengers(cabinRooms, passengerQueue);
+                        addPassengers(cabinRooms, passengerQueue);
                         break;
                     case "V":
-                        for (int i = 0; i < Constants.CABINS_COUNT ;i++) {
+                        for (int i = 0; i < Constants.CABINS_COUNT; i++) {
                             cabinRooms[i].viewCabin(i);
                         }
-
                         break;
                     case "E":
                         for (int i = 0; i < Constants.CABINS_COUNT;i++) {
-                            cabinRooms[i].isCabinEmpty(i);
+                            //cabinRooms[i].isCabinEmpty(i);
+                            if(cabinRooms[i].isCabinEmpty()){
+                                System.out.println(String.format("Cabin no %s is empty",(i+1)));
+                            }
                         }
                         break;
                     case "D":
                         System.out.println("Enter the cabin number to delete the passengers :- ");
                         Scanner input1 = new Scanner(System.in);
                         int i = input1.nextInt();
-                        cabinRooms[i - 1].deletePassengersFromCabin(passengerQueue,cabinRooms);
+                        if (Utility.AreCabinsFull(cabinRooms) || passengerQueue.isEmpty()) {
+                            cabinRooms[i - 1].deletePassengers();
+                        } else if (!(Utility.AreCabinsFull(cabinRooms)) && !(passengerQueue.isEmpty())) {
+                            cabinRooms[i - 1].dequeueAndDelete(passengerQueue);
+                        }
                         break;
                     case "F":
                         Scanner inputFind = new Scanner(System.in);
@@ -180,7 +168,7 @@ public class Main {
     }
 
     /***
-     * This method gives cost for one passenger and full cost for all passengers
+     * This method gives cost for one passenger and full cost for all passengers.
      * @param cabinRooms array cabin.
      */
     public static void cost(Cabin cabinRooms[]) {
@@ -242,6 +230,44 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
+        }
+    }
+
+    /***
+     * If cabins gets fill with passengers,programme will add them to queue.
+     * @param cabinRooms - Cabin array.
+     * @param queue - queue object.
+     */
+    public static void addPassengers(Cabin[] cabinRooms, Queue queue) {
+        while (true) {
+            if(!(Utility.AreCabinsFull(cabinRooms))) {
+                if (queue.isFull()) {
+                    System.out.println("Queue is also filled.Sorry!");
+                    break;
+                }  else if (Utility.askingAddingToQueue().equals("Y")) {
+                    System.out.println("*Cabins full with passengers.We are going to add you to the queue.We will add you to a cabin when one of the passenger leave the cabin.");
+                    System.out.println("");
+                    queue.enQueue(Utility.enterFirstName(0), Utility.enterSurName(0), Utility.enterCostForCabin(0));
+                } else {
+                    break;
+                }
+            } else {
+                int roomNum = Utility.askingCabinNo();
+                if (roomNum == Constants.CABINS_COUNT + 1) {
+                    break;
+                } else if (roomNum >= 1 && roomNum < Constants.CABINS_COUNT + 1) {
+                    System.out.println(String.format("****** Enter passengers names for room %s ****** ",roomNum));
+                    //set customer1
+                    cabinRooms[roomNum - 1].getGustsInCabin()[0] = new Passenger(Utility.enterFirstName(0), Utility.enterSurName(0),Utility.enterCostForCabin(0));
+                    for(int i = 1; i < Constants.PASSENGERS_IN_A_CABIN; i++) {
+                        if ("Y".equals(Utility.askingForAdd(i + 1))) {
+                            cabinRooms[roomNum - 1].getGustsInCabin()[i] = new Passenger(Utility.enterFirstName(i), Utility.enterSurName(i), Utility.enterCostForCabin(i));
+                        }
+                    }
+                } else {
+                    System.out.println("* * * * * Please enter a valid input * * * * * ");
+                }
+            }
         }
     }
 

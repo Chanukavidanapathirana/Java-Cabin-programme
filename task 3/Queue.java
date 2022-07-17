@@ -24,7 +24,7 @@ public class Queue {
             System.out.println("Sorry! Queue is full");
         }
     }
-    //show
+
     public void show() {
         System.out.println("Queue : ");
         for (int i = 0 ; i < size; i++) {
@@ -33,7 +33,6 @@ public class Queue {
         System.out.println(" ");
     }
 
-    //dequeue
     public Passenger deQueue() {
         Passenger passengerToCabin = queue[front];
         if (!isEmpty()) {
@@ -47,9 +46,11 @@ public class Queue {
     public int getSize() {
         return size;
     }
+
     public boolean isEmpty() {
         return size == 0;
     }
+
     public boolean isFull() {
         return size == 5;
     }

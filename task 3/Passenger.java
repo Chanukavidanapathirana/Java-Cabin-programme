@@ -17,7 +17,6 @@ public class Passenger {
         this.costPerCustomer = costPerCustomer;
     }
 
-//getters
     public String getFirstName() {
         return firstName;
     }
@@ -33,9 +32,6 @@ public class Passenger {
     public double getCostPerCustomer() {
         return costPerCustomer;
     }
-
-    //setters
-
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
