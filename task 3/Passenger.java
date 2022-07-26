@@ -1,16 +1,21 @@
+/***
+ * Passenger class.
+ */
 public class Passenger {
     private String firstName;
     private String secondName;
     private String fullName ;
     private double costPerCustomer;
 
-    public Passenger(){
+    public Passenger() {
+
         this.firstName = "empty";
         this.secondName = "empty";
         this.fullName = "empty";
         this.costPerCustomer = 0;
     }
-    public Passenger(String firstName, String secondName, double costPerCustomer){
+    public Passenger(String firstName, String secondName, double costPerCustomer) {
+
         this.firstName = firstName;
         this.secondName = secondName;
         this.fullName = firstName + " " + secondName;
@@ -48,4 +53,7 @@ public class Passenger {
     public void setCostPerCustomer(double costPerCustomer) {
         this.costPerCustomer = costPerCustomer;
     }
+
+
+
 }

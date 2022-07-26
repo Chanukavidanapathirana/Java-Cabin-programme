@@ -1,21 +1,21 @@
 Cabin number 1
- passenger 1 :- { danushka gunathilaka - 20000.0 }.
- passenger 2 :- { empty - 0.0 }.
- passenger 3 :- { empty - 0.0 }.
-Cabin number 2
  passenger 1 :- { empty - 0.0 }.
  passenger 2 :- { empty - 0.0 }.
  passenger 3 :- { empty - 0.0 }.
+Cabin number 2
+ passenger 1 :- { wanidu hasaranga - 20000.0 }.
+ passenger 2 :- { empty - 0.0 }.
+ passenger 3 :- { asd asd - 4000.0 }.
 Cabin number 3
  passenger 1 :- { empty - 0.0 }.
  passenger 2 :- { empty - 0.0 }.
  passenger 3 :- { empty - 0.0 }.
 Cabin number 4
- passenger 1 :- { wanidu hasaranga - 20000.0 }.
+ passenger 1 :- { empty - 0.0 }.
  passenger 2 :- { empty - 0.0 }.
  passenger 3 :- { empty - 0.0 }.
 Cabin number 5
- passenger 1 :- { empty - 0.0 }.
+ passenger 1 :- { chanux bro - 2.0E8 }.
  passenger 2 :- { empty - 0.0 }.
  passenger 3 :- { empty - 0.0 }.
 Cabin number 6

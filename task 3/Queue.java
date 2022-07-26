@@ -1,16 +1,21 @@
+/***
+ * queue class.
+ */
 public class Queue {
 
-    Passenger p1 = new Passenger();
-    Passenger p2 = new Passenger();
-    Passenger p3 = new Passenger();
-    Passenger p4 = new Passenger();
-    Passenger p5 = new Passenger();
-    Passenger queue[] = {p1,p2,p3,p4,p5};
+    Passenger queue[] = new Passenger[Constants.PASSENGERS_IN_QUEUE];
     int size;
     int front;
     int rear ;
+
+    public Queue(){
+        for(int i = 0; i<Constants.PASSENGERS_IN_QUEUE; i++) {
+            queue[i] = new Passenger();
+        }
+    }
     //enQueue
     public void enQueue(String firstName, String surName, double cost) {
+
         if (!isFull()) {
             queue[rear].setFirstName(firstName);
             queue[rear].setSecondName(surName);
@@ -26,6 +31,7 @@ public class Queue {
     }
 
     public void show() {
+
         System.out.println("Queue : ");
         for (int i = 0 ; i < size; i++) {
             System.out.print(queue[(front + i) % 5].getFullName()+" :- "+queue[(front + i) % 5].getCostPerCustomer()+ " , ");
@@ -34,6 +40,7 @@ public class Queue {
     }
 
     public Passenger deQueue() {
+
         Passenger passengerToCabin = queue[front];
         if (!isEmpty()) {
 
