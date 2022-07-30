@@ -250,8 +250,6 @@ public class Main {
                     System.out.println("*Cabins full with passengers.We are going to add you to the queue.We will add you to a cabin when one of the passenger leave the cabin.");
                     System.out.println("");
                     queue.enQueue(Utility.enterFirstName(0), Utility.enterSurName(0), Utility.enterCostForCabin(0));
-                } else {
-                    break;
                 }
             } else {
                 int roomNum = Utility.askingCabinNo();

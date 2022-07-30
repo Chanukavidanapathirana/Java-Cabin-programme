@@ -36,7 +36,7 @@ public class Cabin {
 
     public void findCabin(String name, int i) {
 
-        //todo this is  not suatiable for this class.*****
+        //todo move this method.*****
         for (int j = 0; j < Constants.PASSENGERS_IN_A_CABIN ; j++) {
             if (getPassengersInCabin()[j].getFirstName().equals(name))
                 System.out.println(String.format("%s is in cabin number %s",
